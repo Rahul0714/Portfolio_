@@ -9,10 +9,10 @@ import LinkedinIcon from "./LinkedinIcon";
 import FullscreenIcon from "./FullscreenIcon";
 import { useSelector } from "react-redux";
 import useResize from "../utils/useResize";
-import Android from "./Android";
 
 const Home = () => {
   const [isClosed, setIsClosed] = useState(true);
+  const [isShowProjectPressed, setIsShowProjectPressed] = useState(false);
   const windowSize = useResize();
 
   const isApple = useSelector((store) => store.utils.isApple);
@@ -21,16 +21,12 @@ const Home = () => {
     setIsClosed(true);
   }, [isApple, windowSize]);
 
-  if (windowSize) {
-    return <Android />;
-  }
-
   return (
-    <div className="flex flex-col w-full max-h-screen h-auto ">
+    <div className="flex flex-col max-h-screen h-auto">
       <div
         className={`${
-          !isClosed ? "hidden" : "z-10"
-        } absolute top-[21px] p-2 sm:p-0 sm:left-[35%]  text-white h-[75px] w-[400px] rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center`}
+          !isClosed ? "hidden" : "z-20"
+        } absolute left-[40%] text-white h-fit w-[1/2] p-2 rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center`}
       >
         <div className="flex justify-center items-end gap-4 text-sm">
           <div className="flex flex-col gap-1 items-center justify-center ">
@@ -48,16 +44,21 @@ const Home = () => {
         </div>
       </div>
       <img
-        className=" object-cover fixed w-full h-screen"
+        className=" object-cover fixed w-full h-screen overflow-hidden -z-10"
         src={windows}
         alt="Windows"
       />
-      <ProjectIcon />
-      <ResumeIcon />
-      <GithubIcon />
-      <LinkedinIcon />
-      <FullscreenIcon />
-      <BottomNavbar />
+      <div className="z-10 flex flex-col items-start justify-center box-border m-4 gap-4  ">
+        <ProjectIcon
+          isShowProjectPressed={isShowProjectPressed}
+          setIsShowProjectPressed={setIsShowProjectPressed}
+        />
+        <ResumeIcon />
+        <GithubIcon />
+        <LinkedinIcon />
+        <FullscreenIcon />
+        <BottomNavbar />
+      </div>
     </div>
   );
 };
