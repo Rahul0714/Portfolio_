@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import { AiOutlineFullscreen, AiOutlineFullscreenExit } from "react-icons/ai";
-import { HiArrowUpRight } from "react-icons/hi2";
 
 const FullscreenIcon = () => {
   const [isFullScreen, setIsFullScreen] = useState(false);

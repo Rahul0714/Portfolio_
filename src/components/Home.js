@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import useResize from "../utils/useResize";
 import PopUp from "./PopUp";
 import android from "../assets/anroid.jpg";
+import MobileWeather from "./MobileWeather";
 
 const Home = () => {
   const [isClosed, setIsClosed] = useState(true);
@@ -26,7 +27,7 @@ const Home = () => {
   return (
     <div className="flex flex-col max-h-screen h-auto ">
       <PopUp isClosed={isClosed} setIsClosed={setIsClosed} />
-
+      {windowSize && <MobileWeather />}
       <img
         className=" object-cover fixed w-full h-screen overflow-hidden -z-10"
         src={windowSize ? android : windows}

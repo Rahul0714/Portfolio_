@@ -4,31 +4,11 @@ import { SiWindows11, SiMicrosoftedge, SiReact, SiGmail } from "react-icons/si";
 import { AiFillCloud } from "react-icons/ai";
 import { WEATHER_URL } from "../utils/constants";
 import "dotenv/config";
+import useWeatherData from "../utils/useWeatherData";
 
 const BottomNavbar = () => {
-  const [weatherData, setWeatherData] = useState(null);
   const windowSize = useResize();
-  useEffect(() => {
-    fetchWeatherData();
-  }, []);
-
-  const fetchWeatherData = async () => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": process.env.WEATHER_API_KEY,
-        "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
-      },
-    };
-    try {
-      const response = await fetch(WEATHER_URL, options);
-      const result = await response.json();
-      setWeatherData(result);
-      console.log(result);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const weatherData = useWeatherData();
 
   return (
     <div>
