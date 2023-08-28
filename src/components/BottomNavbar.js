@@ -20,14 +20,14 @@ const BottomNavbar = () => {
         "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
       },
     };
-    // try {
-    //   const response = await fetch(WEATHER_URL, options);
-    //   const result = await response.json();
-    //   setWeatherData(result);
-    //   console.log(result);
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    try {
+      const response = await fetch(WEATHER_URL, options);
+      const result = await response.json();
+      setWeatherData(result);
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
