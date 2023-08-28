@@ -10,6 +10,7 @@ import FullscreenIcon from "./FullscreenIcon";
 import { useSelector } from "react-redux";
 import useResize from "../utils/useResize";
 import PopUp from "./PopUp";
+import android from "../assets/anroid.jpg";
 
 const Home = () => {
   const [isClosed, setIsClosed] = useState(true);
@@ -28,7 +29,7 @@ const Home = () => {
 
       <img
         className=" object-cover fixed w-full h-screen overflow-hidden -z-10"
-        src={windows}
+        src={windowSize ? android : windows}
         alt="Windows"
       />
       <div className=" flex flex-row sm:flex-col items-start box-border m-4 gap-4 flex-wrap">
