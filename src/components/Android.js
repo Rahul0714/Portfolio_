@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import React, { useEffect, useState } from "react";
 import { IoBulbOutline } from "react-icons/io5";
 import windows from "../assets/windows.jpg";
@@ -7,30 +8,15 @@ import ProjectIcon from "./ProjectIcons";
 import ResumeIcon from "./ResumeIcon";
 import LinkedinIcon from "./LinkedinIcon";
 import FullscreenIcon from "./FullscreenIcon";
-import { useSelector } from "react-redux";
-import useResize from "../utils/useResize";
-import Android from "./Android";
 
-const Home = () => {
+const Android = () => {
   const [isClosed, setIsClosed] = useState(true);
-  const windowSize = useResize();
-
-  const isApple = useSelector((store) => store.utils.isApple);
-
-  useEffect(() => {
-    setIsClosed(true);
-  }, [isApple, windowSize]);
-
-  if (windowSize) {
-    return <Android />;
-  }
-
   return (
     <div className="flex flex-col w-full max-h-screen h-auto ">
       <div
         className={`${
           !isClosed ? "hidden" : "z-10"
-        } absolute top-[21px] p-2 sm:p-0 sm:left-[35%]  text-white h-[75px] w-[400px] rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center`}
+        } absolute top-[21px] align-middle px-2 sm:p-0 sm:left-[35%] left-[10%]  text-white h-[75px] sm:w-[400px] rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center`}
       >
         <div className="flex justify-center items-end gap-4 text-sm">
           <div className="flex flex-col gap-1 items-center justify-center ">
@@ -48,7 +34,7 @@ const Home = () => {
         </div>
       </div>
       <img
-        className=" object-cover fixed w-full h-screen"
+        className=" object-cover fixed w-full h-full"
         src={windows}
         alt="Windows"
       />
@@ -57,9 +43,10 @@ const Home = () => {
       <GithubIcon />
       <LinkedinIcon />
       <FullscreenIcon />
+
       <BottomNavbar />
     </div>
   );
 };
 
-export default Home;
+export default Android;
