@@ -8,7 +8,7 @@ const PopUp = ({ isClosed, setIsClosed }) => {
     <div
       className={`${
         !isClosed ? "hidden" : "z-20"
-      } mx-auto text-white h-fit w-fit p-2 rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center z-30 absolute left-[30%] right-[30%]`}
+      } mx-auto text-white h-fit w-fit p-2 rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center z-30 absolute left-[10%] right-[10%]`}
     >
       <div className="flex justify-center items-end gap-4 text-sm">
         <div className="flex flex-col gap-1 items-center justify-center ">
