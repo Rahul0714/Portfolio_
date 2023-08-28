@@ -23,10 +23,7 @@ const FullscreenIcon = () => {
   }, [isFullScreen]);
 
   return (
-    <div
-      className="absolute w-[60px] top-[500px] m-7 left-[18px] flex flex-col justify-center items-center"
-      allow="fullscreen"
-    >
+    <div className="absolute w-[60px] top-[500px] m-7 left-[23px] flex flex-col justify-center items-center">
       <div
         className="text-5xl text-blue-950 flex justify-center items-center bg-gray-200 rounded-lg cursor-pointer"
         onClick={() => onFullScreenChange()}
@@ -36,7 +33,7 @@ const FullscreenIcon = () => {
           <HiArrowUpRight className="text-blue-950 text-sm font-bold" />
         </div>
       </div>
-      <div className="text-white">Fullscreen</div>
+      <div className="text-white mt-2">Fullscreen</div>
     </div>
   );
 };

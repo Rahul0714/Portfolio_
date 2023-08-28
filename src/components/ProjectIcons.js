@@ -23,7 +23,7 @@ const ProjectIcon = () => {
           <HiArrowUpRight className="text-blue-950 text-sm font-bold" />
         </div>
       </div>
-      <div className="text-white text-center p-1 text-base">Projects</div>
+      <div className="text-white text-center p-1 text-base ">Projects</div>
     </div>
   );
 };

@@ -7,12 +7,13 @@ import ProjectIcon from "./ProjectIcons";
 import ResumeIcon from "./ResumeIcon";
 import LinkedinIcon from "./LinkedinIcon";
 import FullscreenIcon from "./FullscreenIcon";
+import AppleIcon from "./AppleIcon";
 
 const Home = () => {
   const [isClosed, setIsClosed] = useState(true);
 
   return (
-    <div className="flex flex-col w-full h-screen">
+    <div className="flex flex-col w-full max-h-screen h-auto">
       <div
         className={`${
           !isClosed ? "hidden" : "z-10"
@@ -33,12 +34,17 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <img className="min-w-full fixed" src={windows} alt="Windows" />
+      <img
+        className=" object-cover fixed w-full h-screen"
+        src={windows}
+        alt="Windows"
+      />
       <ProjectIcon />
       <ResumeIcon />
       <Github />
       <LinkedinIcon />
       <FullscreenIcon />
+      <AppleIcon />
       <BottomNavbar />
     </div>
   );
