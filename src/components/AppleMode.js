@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { IoBulbOutline } from "react-icons/io5";
-import windows from "../assets/windows.jpg";
-import BottomNavbar from "./BottomNavbar";
-import GithubIcon from "./GithubIcon";
 import ProjectIcon from "./ProjectIcons";
 import ResumeIcon from "./ResumeIcon";
 import LinkedinIcon from "./LinkedinIcon";
+import GithubIcon from "./GithubIcon";
 import FullscreenIcon from "./FullscreenIcon";
-import AppleIcon from "./AppleIcon";
-import AppleMode from "./AppleMode";
-import { useDispatch, useSelector } from "react-redux";
+import AppleBottomNavbar from "./AppleBottomNavbar";
+import TopNavbar from "./TopNavbar";
+import WindowsIcon from "./WindowsIcon";
+import apple from "../assets/apple.jpg";
 
-const Home = () => {
+const AppleMode = () => {
   const [isClosed, setIsClosed] = useState(true);
-
-  const isApple = useSelector((store) => store.utils.isApple);
-
-  useEffect(() => {
-    setIsClosed(true);
-  }, [isApple]);
-
-  if (isApple) {
-    return <AppleMode />;
-  }
+  const [isShowProjectPressed, setIsShowProjectPressed] = useState(false);
 
   return (
-    <div className="flex flex-col w-full max-h-screen h-auto">
+    <div className="flex flex-col w-full max-h-screen h-auto flex-wrap">
       <div
         className={`${
-          !isClosed ? "hidden" : "z-10"
+          !isClosed ? "hidden" : "z-20"
         } absolute top-[21px] left-[500px] text-white h-[75px] w-[400px] rounded-xl backdrop-blur-lg border-[1px] border-blue-950 shadow-sm text-center`}
       >
         <div className="flex justify-center items-end gap-4 text-sm">
@@ -36,10 +26,12 @@ const Home = () => {
             <div className="mt-2 flex gap-2 items-center">
               <IoBulbOutline /> Did you know?
             </div>
-            <div>This portfolio will also look great on mobile</div>
+            <div className="text-base">
+              This portfolio will also look great on mobile
+            </div>
           </div>
           <div
-            className="text-lg cursor-pointer p-1  w-10 hover:text-blue-700"
+            className="text-base cursor-pointer px-2 rounded-md w-10 hover:text-gray-200 bg-slate-600 backdrop-blur-xl "
             onClick={() => setIsClosed(false)}
           >
             OK
@@ -48,18 +40,25 @@ const Home = () => {
       </div>
       <img
         className=" object-cover fixed w-full h-screen"
-        src={windows}
+        src={apple}
         alt="Windows"
       />
-      <ProjectIcon />
+      <TopNavbar
+        isShowProjectPressed={isShowProjectPressed}
+        setIsShowProjectPressed={setIsShowProjectPressed}
+      />
+      <ProjectIcon
+        isShowProjectPressed={isShowProjectPressed}
+        setIsShowProjectPressed={setIsShowProjectPressed}
+      />
       <ResumeIcon />
       <GithubIcon />
       <LinkedinIcon />
       <FullscreenIcon />
-      <AppleIcon />
-      <BottomNavbar />
+      <WindowsIcon />
+      <AppleBottomNavbar />
     </div>
   );
 };
 
-export default Home;
+export default AppleMode;

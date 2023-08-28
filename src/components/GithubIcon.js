@@ -1,7 +1,7 @@
 import { HiArrowUpRight } from "react-icons/hi2";
 import github from "../assets/github.png";
 
-const Github = () => {
+const GithubIcon = () => {
   return (
     <div className="absolute w-[60px]  top-[250px] m-7 flex flex-col justify-center items-center left-[18px] ">
       <a
@@ -19,4 +19,4 @@ const Github = () => {
   );
 };
 
-export default Github;
+export default GithubIcon;

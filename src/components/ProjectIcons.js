@@ -3,9 +3,7 @@ import { SiReact } from "react-icons/si";
 import { HiArrowUpRight } from "react-icons/hi2";
 import Projects from "./Projects";
 
-const ProjectIcon = () => {
-  const [isShowProjectPressed, setIsShowProjectPressed] = useState(false);
-
+const ProjectIcon = ({ isShowProjectPressed, setIsShowProjectPressed }) => {
   return (
     <div className="relative w-[100px] h-[100px] m-7">
       {isShowProjectPressed ? (
