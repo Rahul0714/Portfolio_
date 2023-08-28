@@ -48,7 +48,7 @@ const Home = () => {
         src={windows}
         alt="Windows"
       />
-      <div className="z-10 flex flex-col items-start justify-center box-border m-4 gap-4  ">
+      <div className="z-10 flex flex-row sm:flex-col items-start justify-center box-border m-4 gap-4  ">
         <ProjectIcon
           isShowProjectPressed={isShowProjectPressed}
           setIsShowProjectPressed={setIsShowProjectPressed}
