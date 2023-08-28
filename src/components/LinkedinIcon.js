@@ -3,7 +3,7 @@ import linkedin from "../assets/linkedin.png";
 
 const LinkedinIcon = () => {
   return (
-    <div className="z-10 flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mx-3 mt-2">
       <a
         className="rounded-md cursor-pointer"
         href="https://www.linkedin.com/in/rahul-mujumdar-53829518b/"

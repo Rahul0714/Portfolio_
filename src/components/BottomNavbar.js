@@ -40,7 +40,7 @@ const BottomNavbar = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between items-center w-full h-[65px] backdrop-blur-md z-10 absolute bottom-0">
+      <div className="flex justify-between items-center w-full h-[65px] backdrop-blur-md absolute bottom-0">
         {!windowSize && (
           <div className="mx-4 flex items-center gap-2">
             <div className="">

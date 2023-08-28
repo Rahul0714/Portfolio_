@@ -4,7 +4,7 @@ import Projects from "./Projects";
 
 const ProjectIcon = ({ isShowProjectPressed, setIsShowProjectPressed }) => {
   return (
-    <div className="z-10">
+    <div className="mx-3">
       {isShowProjectPressed ? (
         <Projects
           isShowProjectPressed={isShowProjectPressed}

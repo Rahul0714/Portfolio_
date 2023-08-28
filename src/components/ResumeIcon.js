@@ -2,7 +2,7 @@ import resume from "../assets/resume.png";
 
 const ResumeIcon = () => {
   return (
-    <div className="z-10 flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mx-3 mt-1">
       <div className="cursor-pointer">
         <img className="h-[60px]" src={resume} alt="Resume" />
       </div>

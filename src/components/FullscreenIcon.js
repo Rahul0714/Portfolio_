@@ -23,7 +23,7 @@ const FullscreenIcon = () => {
   }, [isFullScreen]);
 
   return (
-    <div className=" z-10 left-[23px] flex flex-col justify-center items-center">
+    <div className="mx-2 mt-4 flex flex-col justify-center items-center">
       <div
         className="text-5xl text-blue-950 flex justify-center items-center bg-gray-200 rounded-lg cursor-pointer"
         onClick={() => onFullScreenChange()}

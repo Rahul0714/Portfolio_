@@ -2,7 +2,7 @@ import github from "../assets/github.png";
 
 const GithubIcon = () => {
   return (
-    <div className="z-10 flex flex-col justify-center items-center left-[18px] ">
+    <div className="flex flex-col justify-center items-center mx-4 mt-3 ">
       <a
         className="bg-white rounded-md cursor-pointer"
         href="https://github.com/Rahul0714"
